@@ -121,7 +121,7 @@
   </dependencies>
 
   <properties>
-    <mockito.version>5.22.0</mockito.version>
+    <mockito.version>5.23.0</mockito.version>
     <kopeme.version>1.4.4</kopeme.version>
   </properties>
 
