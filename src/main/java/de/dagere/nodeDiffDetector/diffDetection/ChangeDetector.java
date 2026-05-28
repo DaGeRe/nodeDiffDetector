@@ -35,7 +35,7 @@ public class ChangeDetector {
          TypeFileFinder finder = new TypeFileFinder(config);
          final File newFile = finder.getSourceFile(sourceCodeFolders.getProjectFolder(), clazz);
          final File oldFile = finder.getSourceFile(sourceCodeFolders.getOldSources(), clazz);
-         LOG.info("Comparing {}", newFile, oldFile);
+         LOG.info("Comparing {} vs {}", newFile, oldFile);
          if (newFile != null && newFile.exists() && oldFile != null) {
             compareFiles(changedClassesMethods, clazzIterator, clazz, changeData, newFile, oldFile);
          } else {
