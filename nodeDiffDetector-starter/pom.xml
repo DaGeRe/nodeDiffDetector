@@ -1,0 +1,102 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>de.dagere</groupId>
+  <artifactId>nodeDiffDetector-starter</artifactId>
+
+  <parent>
+    <groupId>de.dagere</groupId>
+    <artifactId>nodeDiffDetector-parent</artifactId>
+    <version>0.0.3-SNAPSHOT</version>
+  </parent>
+
+  <name>nodeDiffDetector-starter</name>
+  <description>Starts getting the diff</description>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.5.0</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <transformers>
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                  <mainClass>de.dagere.nodeDiffDetector.Starter</mainClass>
+                </transformer>
+              </transformers>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>de.dagere</groupId>
+      <artifactId>nodeDiffDetector-library</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>2.25.0</version>
+    </dependency>
+  </dependencies>
+
+  <properties>
+    <mockito.version>5.23.0</mockito.version>
+    <kopeme.version>1.4.4</kopeme.version>
+  </properties>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://opensource.org/licenses/MIT</url>
+    </license>
+    <license>
+      <name>GNU Affero General Public License</name>
+      <url>https://www.gnu.org/licenses/agpl.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+
+  <developers>
+    <developer>
+      <id>DaGeRe</id>
+      <name>David Georg Reichelt</name>
+      <email>kopeme@dagere.de</email>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:ssh://github.com:DaGeRe/nodeDiffDetector.git</connection>
+    <developerConnection>scm:git:git@github.com:DaGeRe/nodeDiffDetector.git</developerConnection>
+    <url>https://git@github.com:DaGeRe/nodeDiffDetector.git</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>sonatype-nexus-snapshots</id>
+      <name>Sonatype Nexus snapshot repository</name>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>sonatype-nexus-staging</id>
+      <name>Sonatype Nexus release repository</name>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
+
+
+  <inceptionYear>2023</inceptionYear>
+</project>
