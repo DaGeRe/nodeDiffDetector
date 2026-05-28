@@ -19,9 +19,6 @@ import com.github.javaparser.ast.CompilationUnit;
 public class Starter {
 
     public static void main(String[] args) {
-        args = new String[2];
-        args[0] = "/tmp/JacksonDatabind_1_buggy/New";
-        args[1] = "/tmp/JacksonDatabind_1_buggy/Old";
         if (args.length < 2) {
             System.err.println("Usage: Starter <old_file> <new_file>");
             System.exit(1);
