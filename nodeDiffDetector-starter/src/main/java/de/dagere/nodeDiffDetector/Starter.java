@@ -77,7 +77,7 @@ public class Starter {
             // Output as JSON to stdout
             ObjectMapper mapper = new ObjectMapper();
             mapper.enable(SerializationFeature.INDENT_OUTPUT);
-            System.out.println(mapper.writeValueAsString(changedClassesMethods));
+            mapper.writeValue(new File("out.json"), changedClassesMethods);
 
         } catch (Exception e) {
             e.printStackTrace();
